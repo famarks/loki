@@ -1,0 +1,24 @@
+{
+    "dependencies": [
+        {
+            "name": "grafarg-builder",
+            "source": {
+                "git": {
+                    "remote": "https://github.com/famarks/jsonnet-libs",
+                    "subdir": "grafarg-builder"
+                }
+            },
+            "version": "master"
+        },
+        {
+            "name": "mixin-utils",
+            "source": {
+                "git": {
+                    "remote": "https://github.com/famarks/jsonnet-libs",
+                    "subdir": "mixin-utils"
+                }
+            },
+            "version": "master"
+        }
+    ]
+}

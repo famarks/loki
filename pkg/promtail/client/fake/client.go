@@ -1,0 +1,25 @@
+package fake
+
+import (
+	"time"
+
+	"github.com/prometheus/common/model"
+
+	"github.com/famarks/loki/pkg/promtail/api"
+)
+
+// Client is a fake client used for testing.
+type Client struct {
+	OnHandleEntry api.EntryHandlerFunc
+	OnStop        func()
+}
+
+// Stop implements client.Client
+func (c *Client) Stop() {
+	c.OnStop()
+}
+
+// Handle implements client.Client
+func (c *Client) Handle(labels model.LabelSet, time time.Time, entry string) error {
+	return c.OnHandleEntry.Handle(labels, time, entry)
+}
